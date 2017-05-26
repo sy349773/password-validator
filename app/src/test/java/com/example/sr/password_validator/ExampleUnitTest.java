@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
 
-    MainActivity main = new MainActivity();
+    private MainActivity main = new MainActivity();
 
     /**
      * Test to check whether a string is "password". Two different strings were provided
@@ -22,10 +22,9 @@ public class ExampleUnitTest {
 
         String str = "password"; // should return false
         String str2 = "Password"; // should return true
-        assertTrue(main.NotPassword(str)==false&&main.NotPassword(str2)==true);
+        assertTrue(!main.NotPassword(str)&&main.NotPassword(str2));
 
     }
-
     /**
      * Test to check whether a string is long enough. 3 different strings were provided
      */
@@ -36,7 +35,7 @@ public class ExampleUnitTest {
         String str2 = "123456789"; // returns true
         String str3 = "123456"; // returns false
 
-        assertTrue(main.passwordLength(str)==true&&main.passwordLength(str2)==true&&main.passwordLength(str3)==false);
+        assertTrue(main.passwordLength(str)&&main.passwordLength(str2)&&!main.passwordLength(str3));
 
     }
 
